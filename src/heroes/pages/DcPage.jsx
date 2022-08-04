@@ -5,14 +5,14 @@ export const DcPage = () => {
 
 
   return (
-   <>
+    <>
       <h1>Dc Comics</h1>
       <hr />
 
-      <HeroList value = 'DC Comics'/>
+      <HeroList value='DC Comics' />
 
 
 
-   </>
+    </>
   )
 }
