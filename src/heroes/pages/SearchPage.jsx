@@ -12,12 +12,12 @@ export const SearchPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const query = queryString.parse (location.search);
+  const query = queryString.parse(location.search);
 
-  const {q=''}= query;
+  const { q = '' } = query;
 
   const heroes = getHeroesByName(q);
- 
+
 
 
   const { onInputChange, searchText } = useForm({
@@ -62,18 +62,20 @@ export const SearchPage = () => {
           <h4>Results</h4>
           <hr />
 
-          <div className='alert alert-primary'>
-            Search a hero
-          </div>
+          {
+            (q === ''
+              ? <div className='alert alert-primary'> Search a hero </div>
+              : (heroes.length === 0) && 
+              <div className='alert alert-danger'> No hero with <b> {q} </b> </div>)
+          }
 
-          <div className='alert alert-danger'>
-            No hero with <b> {q} </b>
-          </div>
+
+
 
         </div>
 
         {
-          heroes.map( hero => (
+          heroes.map(hero => (
             <HeroeCard key={hero.id} {...hero} />
           ))
         }
