@@ -10,7 +10,7 @@ export const Navbar = () => {
 
     const {user, logout} = useContext(AuthContext);
     
-    console.log(user);
+    
     
     
 
