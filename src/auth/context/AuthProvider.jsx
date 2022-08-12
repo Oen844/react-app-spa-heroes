@@ -1,6 +1,3 @@
-
-
-
 import React, { useReducer } from 'react'
 import { types } from '../types/types'
 import { AuthContext } from './AuthContext'
@@ -59,12 +56,11 @@ export const AuthProvider = ({ children }) => {
     dispatch(action)
   }
 
-
   return (
     <AuthContext.Provider value={{
       ...authState,
-      login,
-      logout
+      login: login,
+      logout:logout
     }}>
       {children}
     </AuthContext.Provider>
